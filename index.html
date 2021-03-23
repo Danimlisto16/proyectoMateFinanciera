@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
+    <script src="logicaAmortizacion.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
 </head>
 <h1>  Calcula tu tabla de Amortización o Capitalización</h1>
 <body>
@@ -37,28 +41,38 @@
                         <label for="">Abono:</label>
                         
                     </td>
-                    <td><input id="inpAbono" type="text"></td>
+                    <td>
+                        <label id= "inpAbono"for=""></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for=""></label>
+                        
+                    </td>
+                    <td>
+                        <button id="btnCalcular" onClick="calcularAbono()"> Calcular </button>
+                    </td>
                 </tr>
             </thead>
             <tbody>
                 <tr></tr>
             </tbody>
-    </table id = "tblProceso">
-    <table> 
+    </table >
+    <table id = "tblProceso"> 
         <thead>
             <tr>
                 <th>Periodo</th>
                 <th>Cantidad de Inicio</th>
                 <th>Interés</th>
-                <th>Interés</th>
                 <th>Depósito Final</th>
                 <th>Monto</th>
               </tr>
         </thead>
-
-        <tbody>
-
+        <tbody id="tblAmortizacion">
         </tbody>
     </table>
 </body>
+
+
 </html>
