@@ -26,32 +26,52 @@ function calcularAbono( ){
 
 
 function anadirFilasTabla(periodo,amortizacion,intereses,abono,saldoInsoluto){
-    var fila = "<tr> <td> $"+periodo+"</td> <td> $"+amortizacion+"</td> <td> $"+intereses+"</td> <td> $"+abono+"</td> <td> $"+saldoInsoluto+"</td> </tr>";
+    var fila = "<tr> <td> "+periodo+"</td> <td> $"+amortizacion+"</td> <td> $"+intereses+"</td> <td> $"+abono+"</td> <td> $"+saldoInsoluto+"</td> </tr>";
     $("#tblAmortizacion").append(fila);
+}
+
+function limpiarDatos(campo){
+    texto = $(campo).val("");
+}
+
+function limparTodo(){
+    limpiarDatos("#inpMonto");
+    limpiarDatos("#inpTasa");
+    limpiarDatos("#inpCantPagos");
+    limpiarDatos("#lblAbono");
+    $("#tblAmortizacion").empty(); //limpiar tabla
 }
 
 function calcularTablaAmortizacion(monto ,tasa ,pagos ,abono){
     //agregar primera fila a la matriz 0 0 0 0 saldo insoluto
-    periodo = 0;
-    amortizacion = 0;
-    intereses = 0;
-    saldoInsoluto = monto;
-    anadirFilasTabla(periodo,amortizacion,intereses,0,saldoInsoluto);
-    //calcular valores
-    for(i = 1; i <= pagos; i++){
-        periodo = i;
+    var cantidadFilas = $("#tblAmortizacion > tr").length;
+    if(cantidadFilas == 0){
+        periodo = 0;
+        amortizacion = 0;
+        intereses = 0;
+        saldoInsoluto = monto;
+        anadirFilasTabla(periodo,amortizacion,intereses,0,saldoInsoluto);
+        //calcular valores
+        for(i = 1; i <= pagos; i++){
+            periodo = i;
 
-        intereses = tasa*saldoInsoluto;
-        intereses = intereses.toFixed(3); //aproxima 3 decimales
+            intereses = tasa*saldoInsoluto;
+            intereses = intereses.toFixed(3); //aproxima 3 decimales
 
-        amortizacion = abono - intereses;
-        amortizacion = amortizacion.toFixed(3);
+            amortizacion = abono - intereses;
+            amortizacion = amortizacion.toFixed(3);
 
-        saldoInsoluto = saldoInsoluto - amortizacion;
-        saldoInsoluto = saldoInsoluto.toFixed(3);
+            saldoInsoluto = saldoInsoluto - amortizacion;
+            saldoInsoluto = saldoInsoluto.toFixed(3);
 
-        anadirFilasTabla(periodo,amortizacion,intereses,abono,saldoInsoluto)
+            anadirFilasTabla(periodo,amortizacion,intereses,abono,saldoInsoluto);
+        }
+            
+    }else{
+        alert("La tabla contiene valores, limpia la tabla para un nuevo cálculo");
     }
+    
+    
 
 
 }
