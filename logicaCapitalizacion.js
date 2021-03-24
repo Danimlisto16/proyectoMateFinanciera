@@ -13,7 +13,7 @@ function calcularAbonoCap( ){
 
 
 function calcularTablaCapitalizacion(monto ,tasa ,pagos ,abono){
-    //agregar primera fila a la matriz 0 0 0 0 saldo insoluto
+    //agregar primera fila a la matriz 0 0 0 0 monto ganado
     periodo = 1;
     amortizacion = 0;
     intereses = 0;
