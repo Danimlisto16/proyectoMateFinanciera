@@ -16,17 +16,23 @@ function calcularAbono( ){
     monto = obtenerValorCampo("#inpMonto")
     tasa = obtenerValorCampo("#inpTasa");
     pagos = obtenerValorCampo("#inpCantPagos");
+    if ($("#tipo_tabla2").is(':checked')) {
+        abono = (monto * tasa)/( 1 - (1 + tasa )**( -pagos));
+        abono = abono.toFixed(3);
+        //console.log(abono)
+        $("#inpAbono").text(abono);
+        $("#tblAmortizacion").empty();
+        calcularTablaAmortizacion(monto ,tasa ,pagos ,abono);    
+    }else if($("#tipo_tabla1").is(':checked')){
+        calcularAbonoCap( );
+    }
 
-    abono = (monto * tasa)/( 1 - (1 + tasa )**( -pagos));
-    abono = abono.toFixed(3);
-    //console.log(abono)
-    $("#inpAbono").text(abono);
-    calcularTablaAmortizacion(monto ,tasa ,pagos ,abono);
+    
 }
 
 
 function anadirFilasTabla(periodo,amortizacion,intereses,abono,saldoInsoluto){
-    var fila = "<tr> <td> $"+periodo+"</td> <td> $"+amortizacion+"</td> <td> $"+intereses+"</td> <td> $"+abono+"</td> <td> $"+saldoInsoluto+"</td> </tr>";
+    var fila = "<tr> <td> "+periodo+"</td> <td> $"+amortizacion+"</td> <td> $"+intereses+"</td> <td> $"+abono+"</td> <td> $"+saldoInsoluto+"</td> </tr>";
     $("#tblAmortizacion").append(fila);
 }
 
