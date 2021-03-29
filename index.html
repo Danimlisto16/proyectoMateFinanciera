@@ -1,98 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>Amortizar y Capitalizar</title>
     <script src="logicaAmortizacion.js"></script>
     <script src="logicaCapitalizacion.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="img/table.png">
+    <link rel="stylesheet" href="css/main.css">
 </head>
-<h1>  Calcula tu tabla de Amortización o Capitalización</h1>
+
 <body>
-    <table id = "tblDatos"> 
-            <thead>
-                
-                <tr>
-                    <td>
-                        <label for="">Monto:</label>
-                        
-                    </td>
-                    <td><input id="inpMonto" type="text"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="">Tasa:</label>
-                        
-                    </td>
-                    <td><input id="inpTasa" type="text"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="">Cantidad de pagos N:</label>
-                        
-                    </td>
-                    <td><input id="inpCantPagos" type="text"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="">Abono:</label>
-                        
-                    </td>
-                    <td>
-                        <label id= "lblAbono"for=""></label>
-                    </td>
-                </tr>
-                <tr>
-                	<td>
-						<input type="radio" id="tipo_tabla1" name="tabla" value="tipo_tabla1" checked>
-						Tabla Capitalización
-                		     
-                    </td>
-                    
-                    
-                
-                	<td>
-						<input type="radio" id="tipo_tabla2" name="tabla" value="tipo_tabla2">
-						Tabla Amortización
-                		     
-                    </td>
-                    
-                    
-                </tr>
-                <tr>
-                    <td>
-                        <label for=""></label>
-                        
-                    </td>
-                    <td>
-                        <button id="btnCalcular" onClick="calcularAbono()"> Calcular </button>
-                    </td>
-                    <td>
-                        <button id="btnLimpiar" onClick="limparTodo()"> Limpiar </button>
-                    </td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr></tr>
-            </tbody>
-    </table >
-    <table id = "tblProceso"> 
-        <thead>
-            <tr>
-                <th>Periodo</th>
-                <th>Cantidad de Inicio</th>
-                <th>Interés</th>
-                <th>Depósito Final</th>
-                <th>Monto</th>
-              </tr>
-        </thead>
-        <tbody id="tblAmortizacion">
-        </tbody>
-    </table>
+    <img class="fondo" src="img/banner.png" alt="fondo.png">
+    <div class="contenedor">
+        <div class="cabecera campo-1 centered">
+            <h1 >Calculadora de Amortización y Capitalización</h1>
+            <div class="campo-1 align-left">
+                <div class="campo-1-2 centered">
+                    <img class="logo" src="img/table_big.png" alt="logo.png">
+                </div>
+                <div class="campo-1-2"></div>
+                <h3 class="campo-1-2">Con este aplicativo web podrás ser capaz de realizar tablas de Amortización o Capitalización en base a los datos ingresados, de está manera podrás visualizar muy facilmente las tablas sin necesidad de hacer cálculos.</h3>
+                <div class="campo-1-2"></div>
+                <div class="campo-1-2 centered">
+                    <i class="main-btn">Calculadora</i>
+                </div>
+            </div>
+        </div>
+        <div class="campo-1 centered tabla">
+            <h1> Calcula tu tabla de Amortización o Capitalización</h1>
+            <div class="campo-1">
+                <table id="tblDatos">
+                    <thead>
+                        <tr>
+                            <td>
+                                <label for="">Monto:</label>
+                            </td>
+                            <td><input id="inpMonto" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="">Tasa:</label>
+                            </td>
+                            <td><input id="inpTasa" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="">Cantidad de pagos N:</label>
+                            </td>
+                            <td><input id="inpCantPagos" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="">Abono:</label>
+                            </td>
+                            <td>
+                                <label id="lblAbono" for=""></label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="radio" id="tipo_tabla1" name="tabla" value="tipo_tabla1" checked>
+                                Tabla Capitalización
+                            </td>
+                            <td>
+                                <input type="radio" id="tipo_tabla2" name="tabla" value="tipo_tabla2">
+                                Tabla Amortización
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for=""></label>
+                            </td>
+                            <td>
+                                <button id="btnCalcular" onClick="calcularAbono()"> Calcular </button>
+                            </td>
+                            <td>
+                                <button id="btnLimpiar" onClick="limparTodo()"> Limpiar </button>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr></tr>
+                    </tbody>
+                </table>
+                <table id="tblProceso">
+                    <thead>
+                        <tr>
+                            <th>Periodo</th>
+                            <th>Cantidad de Inicio</th>
+                            <th>Interés</th>
+                            <th>Depósito Final</th>
+                            <th>Monto</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tblAmortizacion">
+                    </tbody>
+                </table>
+            </div> 
+        </div>
+    </div>
 </body>
 
 
