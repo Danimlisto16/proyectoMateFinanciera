@@ -32,41 +32,31 @@
         <div id = "divTipoBanco">
 
 
-            <div id="carouselBanco" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                  <li data-target="#myCarousel" data-slide-to="1"></li>
-                  <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>
+           
               
                 <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                    <input id= "inpPoliza" name="tipoTabla" value = "Póliza" type="radio">
-                    <label for="inpPoliza">Póliza</label><br>
+                
+                    
                   <div class="item active">
+                    <input id= "inpPacifico" name="tipoBanco" value = "" type="radio">
+                    <label >Banco Pacífico</label><br>
                     <img src="imagenes/pacifico.jpg" alt="Banco del Pacífico">
                   </div>
               
                   <div class="item">
+                    <input id= "inpPichincha" name="tipoBanco" value = "" type="radio">
+                    <label for="inpPoliza">Banco Pacífico</label><br>
                     <img src="imagenes/pichincha.jpg" alt="Banco del Pichincha">
                   </div>
               
                   <div class="item">
+                    <input id= "inpCfn" name="tipoBanco" value = "" type="radio">
+                    <label for="inpPoliza">Banco Pacífico</label><br>
                     <img src="imagenes/cfn.jpg" alt="Corporación Nacional Financiera">
                   </div>
-                </div>
+                
               
-                <!-- Left and right controls -->
-                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                  <span class="glyphicon glyphicon-chevron-left"></span>
-                  <span class="sr-only">Previous</span>
-                </a>
-                <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                  <span class="glyphicon glyphicon-chevron-right"></span>
-                  <span class="sr-only">Next</span>
-                </a>
-              </div>
+              
     
         </div>
 
@@ -74,6 +64,12 @@
         <div id="datos" >   
             <label for="">Ingresa el monto: </label>
             <input type="number">
+            <label for="">Tiempo:</label>
+            <select name="" id="">
+                <option value="">MENSUAL</option>
+                <option value="">TRIMESTRAL</option>
+            </select>
+            <br>
             <label for="">Tasa del banco: </label>
             <input type="text" readonly >
         </div>
