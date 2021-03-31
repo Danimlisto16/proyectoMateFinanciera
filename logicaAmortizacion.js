@@ -41,6 +41,8 @@ function mostrarAbono(){
 
 function calcularAbono( ){
     //Obtener valores
+    window.location.hash='';
+    window.location.hash='tblProceso';
     monto = obtenerValorCampo("#inpMonto");
     tasa = obtenerValorCampo("#inpTasaEfectiva");
     pagos = obtenerValorCampo("#inpCantPagos");

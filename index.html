@@ -44,21 +44,61 @@
                 </div>
             </div>
         </div>
+        <div class="campo-1 centered" style="margin-top: 5%;">
+            <h1 class="campo-1 titulo-tabla"> Conceptos generales</h1>
+            <h2 class="subt">Anualidades e interés compuesto:</h2 class="subt">
+            <div class="model-info">
+                <h1 class="info-title">Anualidad</h1>
+                <p>Es el pago o depósito de una suma de dinero a la cual se le reconoce una tasa de interés por período.</p>
+            </div>
+            <div class="model-info">
+                <h1 class="info-title">Periodo de pago</h1>
+                <p>Intervalo de tiempo que transcurre entre el comienzo del primer período de pagos o depósitos y el final del último.</p>
+            </div>
+            <div class="model-info">
+                <h1 class="info-title">Tasa</h1>
+                <p>Tipo de interés que se fija para el pago o depósito de las rentas o anualidades; puede ser nominal o efectiva.</p>
+            </div>
+            <div class="model-info">
+                <h1 class="info-title">Tiempo o plazo</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis ex magni illo in quisquam animi debitis, nam repellendus doloremque esse, perspiciatis delectus, quis laborum ipsam suscipit rem fuga quibusdam veritatis.</p>
+            </div>
+            <div class="model-info">
+                <h1 class="info-title">Renta</h1>
+                <p>Valor del pago o depósito periódico.</p>
+            </div>
+            <div class="model-info">
+                <h1 class="info-title">Anualidades anticipadas</h1>
+                <p>Son aquellas en las que el depósito, el pago y la liquidación de los intereses se hacen al principio de cada período: pago de cuotas por adelantado.</p>
+            </div>
+            <div class="model-info">
+                <h1 class="info-title">Anualidades vencidas</h1>
+                <p>Son aquellas en las que el depósito, pago o renta y la liquidación de intereses se realizan al final de cada período. Ejemplo: pago de cuotas mensuales por deudas a plazo.</p>
+            </div>
+            <div class="model-info">
+                <h1 class="info-title">Tablas de amortización</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis ex magni illo in quisquam animi debitis, nam repellendus doloremque esse, perspiciatis delectus, quis laborum ipsam suscipit rem fuga quibusdam veritatis.</p>
+            </div>
+            <div class="model-info">
+                <h1 class="info-title">Tablas de capitalización</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis ex magni illo in quisquam animi debitis, nam repellendus doloremque esse, perspiciatis delectus, quis laborum ipsam suscipit rem fuga quibusdam veritatis.</p>
+            </div>
+        </div>
         <div class="campo-1 centered tabla">
-            <h1 class="titulo-tabla"> Calcula tu tabla de Amortización o Capitalización</h1>
+            <h1 class="titulo-tabla" id="tablita"> Calcula tu tabla de Amortización o Capitalización</h1>
             <div class="campo-1 centered">
                 <h3 class="subt">Ingresa tus datos</h3>
                 <div class="campo-1 centered">
                     <label class="campo-1-5 lbl">Tasa: </label>                    
-                    <input class="campo-1-4 input"  value="0" type="number" id="inpTasa" min="0" max="1" step="0.01" onkeyup="convertirTasa()">
+                    <input class="campo-1-4 input"  value="0" type="number" id="inpTasa" min="0" max="1" step="0.01" onkeyup="convertirTasa()"> %
                 </div>
                 <div class="campo-1 centered">
                     <label class="campo-1-5 lbl">Monto:</label>                    
-                    <input class="campo-1-4 input" value="0" onkeyup="validarCampo('#inpMonto')" id="inpMonto" type="number" min="0">
+                    <input class="campo-1-4 input" value="0" onkeyup="validarCampo('#inpMonto')" id="inpMonto" type="number" min="0"> $
                 </div>
                 <div class="campo-1 centered">
                     <label class="campo-1-5 lbl">Cantidad de pagos N:</label>                    
-                    <input class="campo-1-4 input" value="1" id="inpCantPagos" min="1" type="number" onkeyup="validarCampo('#inpCantPagos')">
+                    <input class="campo-1-4 input" value="1" id="inpCantPagos" min="1" type="number" onkeyup="validarCampo('#inpCantPagos')"> n
                 </div>
                 <h3 class="subt">Cálculos</h3>
                 <div class="campo-1 centered">
@@ -75,18 +115,18 @@
                         <input type="radio" id="tipo_tabla1" name="tabla" value="tipo_tabla1" checked>
                         <label class="lbl-check" for="tipo_tabla1">
                             <h2>Capitalización</h2>
-                            <p>Awww, poor baby. Too afraid of the scary game sprites? I laugh at you.</p>
+                            <p>La capitalización es el proceso de proyectar un capital inicial a un periodo de tiempo posterior, con base en un tipo de interés.</p>
                         </label>
                     </div>
                     <div>
                         <input type="radio" id="tipo_tabla2" name="tabla" value="tipo_tabla2">
                         <label class="lbl-check" for="tipo_tabla2">
                             <h2>Amortización</h2>
-                            <p>You're not a gaming God by any stretch of the imagination.</p>
+                            <p>Proceso de distribución de gasto en el tiempo de un valor duradero. Así puede significar redimir o extinguir el capital de un préstamo o deuda o recuperar o compensar los fondos invertidos.</p>
                         </label>
                     </div>
                 </div>
-                <div class="campo-1 centered">
+                <div class="campo-1 centered" style="margin-bottom: 60px;">
                     <button class="sec-btn" id="btnCalcular" onClick="calcularAbono()"> Calcular </button>
                     <button class="sec-btn" id="btnLimpiar" onClick="limparTodo()"> Limpiar </button>
                 </div>
