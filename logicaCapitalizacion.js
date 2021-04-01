@@ -16,28 +16,35 @@ function calcularAbonoCap( ){
 
 function calcularTablaCapitalizacion(monto ,tasa ,pagos ,abono){
     //agregar primera fila a la matriz 0 0 0 0 monto ganado
+    total=parseFloat(abono);
+    
     periodo = 1;
-    amortizacion = abono;
-    intereses = parseFloat(amortizacion*tasa).toFixed(2);
-    saldoInsoluto = parseFloat(amortizacion) + parseFloat(intereses);
+    capitalizacion = abono;
+    intereses = parseFloat(capitalizacion*tasa).toFixed(2);
+    total_intereses=parseFloat(intereses);
+    saldoInsoluto = parseFloat(capitalizacion) + parseFloat(intereses);
     saldoInsoluto = parseFloat(saldoInsoluto).toFixed(2);
-    anadirFilasTabla(periodo,amortizacion,intereses,abono,saldoInsoluto);
+    anadirFilasTabla(periodo,capitalizacion,intereses,abono,saldoInsoluto);
 
     //calcular valores
     for(i = 2; i <= pagos; i++){
         periodo = i; 
-        amortizacion = parseFloat(abono) + parseFloat(saldoInsoluto);
+        capitalizacion = parseFloat(abono) + parseFloat(saldoInsoluto);
         
-        intereses = amortizacion*tasa;
+        intereses = capitalizacion*tasa;
         
-        saldoInsoluto = parseFloat(amortizacion) + parseFloat(intereses);
+        saldoInsoluto = parseFloat(capitalizacion) + parseFloat(intereses);
         
         intereses = intereses.toFixed(2); //aproxima 3 decimales
         saldoInsoluto = saldoInsoluto.toFixed(2);
-        amortizacion = parseFloat(amortizacion).toFixed(2);
-        
-        anadirFilasTabla(periodo,amortizacion,intereses,abono,saldoInsoluto)
+        capitalizacion = parseFloat(capitalizacion).toFixed(2);
+        total+=parseFloat(abono);
+        total_intereses+=parseFloat(intereses);
+        anadirFilasTabla(periodo,capitalizacion,intereses,abono,saldoInsoluto)
     }
+
+    var fila = "<tr> <td> <strong>Total</strong> </td> <td> </td> <td><strong> $"+total_intereses.toFixed(2)+" </strong> </td> <td> <strong> $"+total.toFixed(2)+" </strong> </td> <td> </td> </tr>";
+    $("#tblAmortizacion").append(fila);
 
 
 }
