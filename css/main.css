@@ -264,8 +264,15 @@ input[type="radio"]:checked + .lbl-check::after {
   margin: 0px;
   padding-left: 5%;
 }
+
+.footer{
+  background: #56377A;
+  margin: 0px !important;
+  color: white;
+  width: 100%;
+}
 /* ============================================ RESPONSIVE =========================================*/
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .campo-1,
     .campo-1-2,
     .campo-2-3,
@@ -278,5 +285,15 @@ input[type="radio"]:checked + .lbl-check::after {
     .align-left,
     .align-right {
       padding: 0px;
+    }
+    .fondo{
+      display: none;
+    }
+    .cabecera{
+      background-color: #56377A;
+      margin: 0px !important;
+    }
+    .cabecera .campo-1-2, .lbl{
+      text-align: center;
     }
 }
